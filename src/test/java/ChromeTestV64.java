@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ChromeTestV64 {
@@ -26,8 +27,13 @@ public class ChromeTestV64 {
         dc.setCapability(CapabilityType.VERSION, "52.0.2");
         dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
         dc.setCapability("newCommandTimeout", 120);
-        driver = new RemoteWebDriver(new URL("https://localhost:9192/wd/hub/"),dc);
+        try{
 
+        driver = new RemoteWebDriver(new URL("https://localhost:9192/wd/hub/"),dc);
+        }catch (MalformedURLException e){
+            e.printStackTrace();
+        }
+        String testReportUrl = (String)driver.getCapabilities().getCapability("reportUrl");
     }
     @Test
     public void test(){
