@@ -4,14 +4,13 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ChromeTestV64 {
+public class ChromeTestV63 {
     RemoteWebDriver driver;
     DesiredCapabilities dc;
     @BeforeTest
@@ -25,7 +24,7 @@ public class ChromeTestV64 {
         dc.setCapability("testName", "Chrome v64");
         dc.setCapability("newSessionWaitTimeout", 60);
         dc.setCapability("newCommandTimeout", 60);
-        dc.setCapability(CapabilityType.VERSION, "64.0.0");
+        dc.setCapability(CapabilityType.VERSION, "63.0.0");
         dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
 
         try{

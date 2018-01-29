@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Chrome64" >
+        <classes>
+            <class name="ChromeTestV64" />
+        </classes>
+    </test>
+
+    <test name="Chrome63">
+        <classes>
+            <class name="ChromeTestV63"/>
+        </classes>
+    </test>
+</suite>
