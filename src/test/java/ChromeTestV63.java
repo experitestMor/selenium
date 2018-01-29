@@ -21,7 +21,7 @@ public class ChromeTestV63 {
         dc.setCapability("password", "nopsw2Hj");
         dc.setCapability("projectName", "Default"); //only required if your user has several projects assigned to it. Otherwise, exclude this capability.
         dc.setCapability("generateReport", true);
-        dc.setCapability("testName", "Chrome v64");
+        dc.setCapability("testName", "Chrome v63");
         dc.setCapability("newSessionWaitTimeout", 60);
         dc.setCapability("newCommandTimeout", 60);
         dc.setCapability(CapabilityType.VERSION, "63.0.0");
