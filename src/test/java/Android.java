@@ -1,4 +1,6 @@
+import com.experitest.client.InternalException;
 import org.junit.After;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeTest;
@@ -6,6 +8,8 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static java.lang.Thread.sleep;
 
 public class Android {
     RemoteWebDriver driver;
@@ -36,6 +40,15 @@ public class Android {
     @Test
     public void test(){
         driver.get("https://www.premierleague.com/tables");
+        WebElement element = driver.findElementByXPath("//*[@id=\"mainContent\"]/div[2]/div[1]/div[3]/div/div/div/table/tbody/tr[1]/td[3]/a/span[2]");
+        element.click();
+        element = driver.findElementByXPath("//*[@id=\"mainContent\"]/nav/ul/li[2]/a");
+        element.click();
+        try{
+            sleep(10000);
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }
         driver.quit();
 
     }
