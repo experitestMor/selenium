@@ -1,5 +1,6 @@
-import org.junit.After;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.BrowserType;
@@ -7,6 +8,9 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -27,9 +31,8 @@ public class Chrome {
         dc= DesiredCapabilities.chrome();
 //        dc.setCapability(CapabilityType.PLATFORM, Platform.WIN10);
 //        dc.setCapability(CapabilityType.VERSION, "57.0");
-        dc.setCapability("username", "mor.hazan");
-        dc.setCapability("password", "nopsw2Wj");
-        dc.setCapability("projectName", "Default"); //only required if your user has several projects assigned to it. Otherwise, exclude this capability.
+        dc.setCapability("accessKey", "eyJ4cC51IjoxMTIsInhwLnAiOjIsInhwLm0iOiJNVFV5TURnMk16TTJOVGM1TWciLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4Mzg0MDU4NjQsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.TXGKg4eRa5CgK-6uzHobOrcuy2zcexm8ZKseLU_5u_E");
+
         dc.setCapability("generateReport", true);
         dc.setCapability("testName", "Chrome Test");
         dc.setCapability("newSessionWaitTimeout", 60);
@@ -43,22 +46,18 @@ public class Chrome {
     }
     @Test
     public void test(){
-        driver.get("https://www.premierleague.com/tables");
-        driver.findElementByXPath("//*[@id=\"mainContent\"]/div[2]/div[1]/div[3]/div/div/div/table/tbody/tr[1]/td[3]/a/span[2]").click();
-
-        driver.findElementByXPath("//*[@id=\"mainContent\"]/nav/ul/li[2]/a").click();
-
-        try{
-            sleep(10000);
-        }catch(InterruptedException e){
-            e.printStackTrace();
-        }
-        driver.quit();
+        driver.get("https://www.google.com");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
+        WebElement searchBar = driver.findElement(By.id("lst-ib"));
+        searchBar.click();
+        searchBar.sendKeys("Experitest");
+        searchBar.sendKeys(Keys.ENTER);
 
     }
 
-    @After
+    @AfterMethod
     public void TearDown(){
+        driver.quit();
         System.out.println(testReportURL);
 
     }

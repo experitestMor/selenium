@@ -17,14 +17,9 @@
             <class name="Firefox"/>
         </classes>
     </test>
-    <!--<test name="Android">
-        <classes>
-            <class name="Android"/>
-        </classes>
-    </test>
     <test name="Safari">
         <classes>
             <class name="Safari"/>
         </classes>
-    </test>-->
+    </test>
 </suite>
