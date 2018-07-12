@@ -1,10 +1,7 @@
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -16,8 +13,6 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static java.lang.Thread.sleep;
 
 public class Chrome {
     RemoteWebDriver driver;
@@ -52,7 +47,6 @@ public class Chrome {
         searchBar.click();
         searchBar.sendKeys("Experitest");
         searchBar.sendKeys(Keys.ENTER);
-
     }
 
     @AfterMethod

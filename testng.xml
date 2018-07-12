@@ -7,19 +7,14 @@
         </classes>
     </test>
 
-    <test name="InternetExplorer">
-        <classes>
-            <class name="IExplorer"/>
-        </classes>
-    </test>
     <test name="Firefox">
         <classes>
             <class name="Firefox"/>
         </classes>
     </test>
-    <test name="Safari">
+    <test name="IE">
         <classes>
-            <class name="Safari"/>
+            <class name="IExplorer"/>
         </classes>
     </test>
 </suite>

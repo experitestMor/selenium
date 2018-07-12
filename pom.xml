@@ -8,107 +8,18 @@
     <artifactId>selenium.mor</artifactId>
     <version>1.0</version>
 
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-            <id>Experitest.repo1</id>
-            <name>YourName</name>
-            <url>https://cloud.experitest.com/repo/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-    <packaging>war</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    <build>
-
-        <plugins>
-            <plugin>
-                <inherited>true</inherited>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-        </plugins>
-
-    </build>
-
     <dependencies>
-        <dependency>
-            <groupId>com.experitest</groupId>
-            <artifactId>selenium-remote-driver</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.experitest</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.experitest</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.experitest</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.experitest</groupId>
-            <artifactId>seetest-client</artifactId>
-            <version>11.4</version>
-        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8</version>
+            <version>6.11</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <artifactId>guava</artifactId>
-            <groupId>com.google.guava</groupId>
-            <type>jar</type>
-            <version>15.0</version>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.5.3</version>
         </dependency>
     </dependencies>
+
 </project>

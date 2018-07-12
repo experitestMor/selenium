@@ -1,3 +1,4 @@
+
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,10 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import sun.security.krb5.internal.crypto.Des;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 
 public class Safari {
     RemoteWebDriver driver;
